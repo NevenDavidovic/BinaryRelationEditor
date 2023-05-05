@@ -1,0 +1,291 @@
+.my-table {
+  border-collapse: collapse;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+
+.my-table th,
+.my-table td {
+  border: 1px solid #0c344a;
+  padding: 1rem;
+}
+
+.my-table th {
+  background-color: #0c344a;
+  font-weight: bold;
+  color: #fff;
+}
+
+.my-table td {
+  background-color: #fff;
+}
+
+.my-table input[type="checkbox"] {
+  transform: scale(7);
+  margin: 0.5rem;
+  color: #fff;
+}
+
+.Calculate {
+  font-size: 2rem;
+  margin: 1rem auto;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #0c344a;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 20px;
+}
+
+.Calculate:hover {
+  background-color: #3e8e41;
+}
+
+.my-table th,
+.my-table td {
+  border: 1px solid black;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.my-table {
+  width: 40rem;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #0c344a;
+  color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 6px -6px #999;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  text-shadow: 2px 2px #222222;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.header-container:before {
+  content: "";
+
+  background-size: cover;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.header-container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #0c344a);
+  z-index: -1;
+}
+
+p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 1rem 0 0.5rem;
+  color: #3f51b5;
+  text-shadow: 2px 2px #eeeeee;
+  text-transform: uppercase;
+}
+
+/* Style for the results */
+#results {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  text-align: left;
+  float: left;
+}
+
+/* Style for the result headers */
+#results h2 {
+  color: #1c1c1c;
+  font-family: Arial, sans-serif;
+  font-size: 26px;
+  margin: 0;
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Style for the result values */
+#results span {
+  color: #6d6d6d;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.naslov {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 2px #666;
+  background: linear-gradient(to bottom, #fff, #eee);
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+#message {
+  background-color: #ffe4e4;
+  border: 1px solid #ff4d4d;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  color: #ff4d4d;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Define styles for the container */
+.Explanation {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+/* Define styles for the title */
+.titleExp {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Define styles for the explanation grid */
+.explanation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+/* Define styles for the explanation items */
+.res {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Define styles for the reflexive item */
+.refleksivnaExp {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+/* Define styles for the antireflexive item */
+.antirefleksivnaExp {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+/* Define styles for the symmetric item */
+.simetricnaExp {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+/* Define styles for the antisymmetric item */
+.antisimetricnaExp {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+/* Define styles for the transitive item */
+.tranzitivnaExp {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+/* Define styles for the asymmetric item */
+.asimetricnaaExp {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+/* Define styles for the conclusion item */
+.zakljucakExp {
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+}
+
+/* Define styles for the title of each item */
+.res h3 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Define styles for the description of each item */
+.res p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*-----------------------------------------------------------------*/
+h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  text-shadow: 2px 2px #222222;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  animation: color-change 5s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: #ffffff;
+  }
+  25% {
+    color: #2ec831;
+  }
+  50% {
+    color: #0018cc;
+  }
+  75% {
+    color: #7700ff;
+  }
+  100% {
+    color: #ffe433;
+  }
+}

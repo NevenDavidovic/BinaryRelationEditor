@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary relations calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>Binary Relations Calculator</h1>
+      </div>
+    </header>
+
+    <div id="message" style="display: none"></div>
+    <div id="results">
+      <h2 class="naslov">Rezultati:</h2>
+      <h2>
+        Refleksivna:
+        <span
+          class="res refleksivna"
+          id="resRefleksivna"
+          style="text-align: right"
+        ></span>
+      </h2>
+      <br />
+      <hr />
+      <h2>Antirefleksivna: <span class="res antirefleksivna"></span></h2>
+      <br />
+      <hr />
+      <h2>Simetrična: <span class="res simetricna"></span></h2>
+      <br />
+      <hr />
+      <h2>Antisimetrična: <span class="res antisimetricna"></span></h2>
+      <br />
+      <hr />
+      <h2>Tranzitivna: <span class="res tranzitivna"></span></h2>
+      <br />
+      <hr />
+      <h2>Asimetrična: <span class="res asimetricna"></span></h2>
+      <br />
+      <hr />
+    </div>
+    <table class="my-table">
+      <tr>
+        <th></th>
+        <th>a</th>
+        <th>b</th>
+        <th>c</th>
+        <th>d</th>
+        <th>e</th>
+      </tr>
+      <tr>
+        <th>a</th>
+        <td>
+          <input
+            type="checkbox"
+            id="aa"
+            name="aa"
+            class="checkbox"
+            value="aa"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="ab"
+            name="ab"
+            class="checkbox"
+            value="ab"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="ac"
+            name="ac"
+            class="checkbox"
+            value="ac"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="ad"
+            name="ad"
+            class="checkbox"
+            value="ad"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="ae"
+            name="ae"
+            class="checkbox"
+            value="ae"
+          />
+        </td>
+      </tr>
+      <tr>
+        <th>b</th>
+        <td>
+          <input
+            type="checkbox"
+            id="ba"
+            name="ba"
+            class="checkbox"
+            value="ba"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="bb"
+            name="bb"
+            class="checkbox"
+            value="bb"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="bc"
+            name="bc"
+            class="checkbox"
+            value="bc"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="bd"
+            name="bd"
+            class="checkbox"
+            value="bd"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="be"
+            name="be"
+            class="checkbox"
+            value="be"
+          />
+        </td>
+      </tr>
+      <tr>
+        <th>c</th>
+        <td>
+          <input
+            type="checkbox"
+            id="ca"
+            name="ca"
+            class="checkbox"
+            value="ca"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="cb"
+            name="cb"
+            class="checkbox"
+            value="cb"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="cc"
+            name="cc"
+            class="checkbox"
+            value="cc"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="cd"
+            name="cd"
+            class="checkbox"
+            value="cd"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="ce"
+            name="ce"
+            class="checkbox"
+            value="ce"
+          />
+        </td>
+      </tr>
+      <tr>
+        <th>d</th>
+        <td>
+          <input
+            type="checkbox"
+            id="da"
+            name="da"
+            class="checkbox"
+            value="da"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="db"
+            name="db"
+            class="checkbox"
+            value="db"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="dc"
+            name="dc"
+            class="checkbox"
+            value="dc"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="dd"
+            name="dd"
+            class="checkbox"
+            value="dd"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="de"
+            name="de"
+            class="checkbox"
+            value="de"
+          />
+        </td>
+      </tr>
+      <tr>
+        <th>e</th>
+        <td>
+          <input
+            type="checkbox"
+            id="ea"
+            name="ea"
+            class="checkbox"
+            value="ea"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="eb"
+            name="eb"
+            class="checkbox"
+            value="eb"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="ec"
+            name="ec"
+            class="checkbox"
+            value="ec"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="ed"
+            name="ed"
+            class="checkbox"
+            value="ed"
+          />
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            id="ee"
+            name="ee"
+            class="checkbox"
+            value="ee"
+          />
+        </td>
+      </tr>
+    </table>
+
+    <button class="Calculate">Calculate</button>
+
+    <div class="Explanation">
+      <h2 class="titleExp">Explanation:</h2>
+      <h3 class="res refleksivnaExp"></h3>
+      <h3 class="res antirefleksivnaExp"></h3>
+      <h3 class="res simetricnaExp"></h3>
+      <h3 class="res antisimetricnaExp"></h3>
+      <h3 class="res tranzitivnaExp"></h3>
+      <h3 class="res asimetricnaExp"></h3>
+      <h3 class="res zakljucakExp"></h3>
+    </div>
+
+    <footer>
+      <div><a href=""></a>Github</div>
+    </footer>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>
