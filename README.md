@@ -1,4 +1,5 @@
 # BinaryRelationEditor
+## link for the app: 
 ## Web application in Java Script for calculating binary relations
 ### Functionalities:
 - editing pairs of binary relation in a matrix
