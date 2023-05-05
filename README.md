@@ -1,5 +1,5 @@
 # BinaryRelationEditor
-## link for the app: 
+## link for the app: https://main--stirring-bonbon-44fbec.netlify.app/
 ## Web application in Java Script for calculating binary relations
 ### Functionalities:
 - editing pairs of binary relation in a matrix
