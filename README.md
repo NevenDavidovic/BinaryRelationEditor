@@ -6,5 +6,5 @@
 - explanations about the results
 
 ## TO DO
-[] module of generating binary relation tasksž
-[] module for entering the set, number of elements, number of pairs
+[ ] module of generating binary relation tasksž
+[ ] module for entering the set, number of elements, number of pairs
