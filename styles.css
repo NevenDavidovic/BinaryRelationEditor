@@ -21,7 +21,7 @@
 }
 
 .my-table input[type="checkbox"] {
-  transform: scale(7);
+  transform: scale(5);
   margin: 0.5rem;
   color: #fff;
 }
@@ -29,6 +29,7 @@
 .Calculate {
   font-size: 2rem;
   margin: 1rem auto;
+  margin-top: 1.7rem;
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
