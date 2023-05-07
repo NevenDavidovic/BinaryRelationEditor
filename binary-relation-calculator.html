@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary relations calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>Binary Relations Calculator</h1>
+        <a href="index.html" class="btn">Binary Relation Matrix</a>
+      </div>
+    </header>
+
+    <div>
+      <label for="set-elements"
+        >Enter the elements of the set (without commas):</label
+      >
+      <input
+        type="text"
+        id="set-elements"
+        name="set-elements"
+        placeholder="example: abcdefg"
+      />
+      <button type="submit" onclick="generateMatrix()">Generate Matrix</button>
+    </div>
+    <div id="matrix-container"></div>
+
+    <div class="result">
+      <h2>Results</h2>
+      <p>Reflexive: <span id="reflexive-result" class="na"></span></p>
+      <p>Antireflexive: <span id="antireflexive-result" class="na"></span></p>
+      <p>Symmetric: <span id="symmetric-result" class="na"></span></p>
+      <p>Antisymmetric: <span id="antisymmetric-result" class="na"></span></p>
+      <p>Transitive: <span id="transitive-result" class="na"></span></p>
+      <p>Asymetric: <span id="asymetric-result" class="na"></span></p>
+    </div>
+
+    <footer>
+      <div><a href=""></a>Github</div>
+    </footer>
+
+    <script src="binary-relation-calculator.js"></script>
+    <script src="javascript.js"></script>
+  </body>
+</html>
