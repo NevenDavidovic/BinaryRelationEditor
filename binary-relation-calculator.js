@@ -105,6 +105,11 @@ function generateMatrix() {
     }
     const lengthSkupA = checkedValues.length;
 
+    if (checkedValues.length < 1) {
+      alert("Error: No pair was selected.");
+      return;
+    }
+
     reflexiveResult.textContent = refleksivnost(lengthSkupA, checkedValues)
       ? "Yes"
       : "No";
@@ -124,6 +129,9 @@ function generateMatrix() {
       ? "Yes"
       : "No";
     transitiveResult.textContent = tranzitivnost(lengthSkupA, checkedValues)
+      ? "Yes"
+      : "No";
+    asymetricResult.textContent = asimetricnost(lengthSkupA, checkedValues)
       ? "Yes"
       : "No";
   });
@@ -230,4 +238,21 @@ function tranzitivnost(lengthSkupA, checkedValues) {
     }
   }
   return false;
+}
+
+// asimetričnost funkcija
+
+function asimetricnost(lengthSkupA, checkedValues) {
+  const boolAntirefleksivnost = antirefleksivnost(lengthSkupA, checkedValues);
+  const boolAntisimetricnost = antisimetricnost(lengthSkupA, checkedValues);
+  const boolSimetricnost = simetricnost(lengthSkupA, checkedValues);
+
+  // Testiranje ASIMETRIČNOSTI
+  if (boolSimetricnost) {
+    return false;
+  } else if (boolAntisimetricnost && boolAntirefleksivnost) {
+    return true;
+  } else {
+    return false;
+  }
 }
