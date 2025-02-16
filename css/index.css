@@ -1,0 +1,163 @@
+/* css/index.css */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #2d3436;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-subtitle {
+  color: #ecf0f1;
+  font-size: 1.1rem;
+  margin: 1rem 0 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #e74c3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.my-table {
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.my-table th,
+.my-table td {
+  padding: 1rem;
+  text-align: center;
+}
+
+.my-table th {
+  background: #3498db;
+  color: white;
+  font-weight: 600;
+}
+
+.my-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #3498db;
+  cursor: pointer;
+}
+
+.Calculate {
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  border: none;
+  color: white;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.Calculate:hover {
+  transform: scale(1.05);
+}
+#message {
+  display: none;
+  max-width: 800px;
+  margin: 15px auto;
+  padding: 8px 15px;
+  background-color: #f1c40f;
+  border-radius: 4px;
+  color: #333;
+}
+
+#results {
+  display: none;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.res {
+  color: #2ecc71;
+  float: right;
+}
+
+.res[data-result="false"] {
+  color: #e74c3c;
+}
+
+.Explanation {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleExp {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3498db, transparent);
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .my-table {
+    width: 95%;
+  }
+
+  .my-table th,
+  .my-table td {
+    padding: 0.5rem;
+  }
+}

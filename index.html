@@ -4,321 +4,362 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Binary relations calculator</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Kalkulator binarnih relacija</title>
+    <link rel="stylesheet" href="css/index.css" />
   </head>
+
   <body>
-    <header>
+    <header class="header">
       <div class="header-container">
-        <h1>Binary Relations Calculator</h1>
-        <a href="binary-relation-calculator.html" class="btn"
-          >Binary Relation Calculator</a
-        >
+        <h1>Kalkulator Binarnih relacija</h1>
+        <p class="header-subtitle">
+          Računajte i analizirajte binarne relacije brzo i jednostavno.
+          <br />Možeš izabrati parove ovdje ili dolje na generiranoj matrici.
+        </p>
+
+        <a href="binary-relation-calculator.html" class="btn">Izaberi parove</a>
       </div>
     </header>
 
-    <div id="message" style="display: none"></div>
-    <div id="results">
-      <h2 class="naslov">Rezultati:</h2>
-      <h2>
-        Refleksivna:
-        <span
-          class="res refleksivna"
-          id="resRefleksivna"
-          style="text-align: right"
-        ></span>
-      </h2>
-      <br />
-      <hr />
-      <h2>Antirefleksivna: <span class="res antirefleksivna"></span></h2>
-      <br />
-      <hr />
-      <h2>Simetrična: <span class="res simetricna"></span></h2>
-      <br />
-      <hr />
-      <h2>Antisimetrična: <span class="res antisimetricna"></span></h2>
-      <br />
-      <hr />
-      <h2>Tranzitivna: <span class="res tranzitivna"></span></h2>
-      <br />
-      <hr />
-      <h2>Asimetrična: <span class="res asimetricna"></span></h2>
-      <br />
-      <hr />
-    </div>
-    <table class="my-table">
-      <tr>
-        <th></th>
-        <th>a</th>
-        <th>b</th>
-        <th>c</th>
-        <th>d</th>
-        <th>e</th>
-      </tr>
-      <tr>
-        <th>a</th>
-        <td>
-          <input
-            type="checkbox"
-            id="aa"
-            name="aa"
-            class="checkbox"
-            value="aa"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="ab"
-            name="ab"
-            class="checkbox"
-            value="ab"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="ac"
-            name="ac"
-            class="checkbox"
-            value="ac"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="ad"
-            name="ad"
-            class="checkbox"
-            value="ad"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="ae"
-            name="ae"
-            class="checkbox"
-            value="ae"
-          />
-        </td>
-      </tr>
-      <tr>
-        <th>b</th>
-        <td>
-          <input
-            type="checkbox"
-            id="ba"
-            name="ba"
-            class="checkbox"
-            value="ba"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="bb"
-            name="bb"
-            class="checkbox"
-            value="bb"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="bc"
-            name="bc"
-            class="checkbox"
-            value="bc"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="bd"
-            name="bd"
-            class="checkbox"
-            value="bd"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="be"
-            name="be"
-            class="checkbox"
-            value="be"
-          />
-        </td>
-      </tr>
-      <tr>
-        <th>c</th>
-        <td>
-          <input
-            type="checkbox"
-            id="ca"
-            name="ca"
-            class="checkbox"
-            value="ca"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="cb"
-            name="cb"
-            class="checkbox"
-            value="cb"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="cc"
-            name="cc"
-            class="checkbox"
-            value="cc"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="cd"
-            name="cd"
-            class="checkbox"
-            value="cd"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="ce"
-            name="ce"
-            class="checkbox"
-            value="ce"
-          />
-        </td>
-      </tr>
-      <tr>
-        <th>d</th>
-        <td>
-          <input
-            type="checkbox"
-            id="da"
-            name="da"
-            class="checkbox"
-            value="da"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="db"
-            name="db"
-            class="checkbox"
-            value="db"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="dc"
-            name="dc"
-            class="checkbox"
-            value="dc"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="dd"
-            name="dd"
-            class="checkbox"
-            value="dd"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="de"
-            name="de"
-            class="checkbox"
-            value="de"
-          />
-        </td>
-      </tr>
-      <tr>
-        <th>e</th>
-        <td>
-          <input
-            type="checkbox"
-            id="ea"
-            name="ea"
-            class="checkbox"
-            value="ea"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="eb"
-            name="eb"
-            class="checkbox"
-            value="eb"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="ec"
-            name="ec"
-            class="checkbox"
-            value="ec"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="ed"
-            name="ed"
-            class="checkbox"
-            value="ed"
-          />
-        </td>
-        <td>
-          <input
-            type="checkbox"
-            id="ee"
-            name="ee"
-            class="checkbox"
-            value="ee"
-          />
-        </td>
-      </tr>
-    </table>
+    <section class="about-section">
+      <h2>Što je Binarni Kalkulator Relacija?</h2>
+      <p>
+        Binarni kalkulator relacija omogućuje analizu odnosa između elemenata u
+        skupu. Pomaže vam odrediti ključne osobine poput refleksivnosti,
+        simetričnosti, antisimetričnosti, antirefleksivnosti i tranzitivnosti.
+      </p>
+      <p>
+        Unosom relacija između elemenata možete automatski provjeriti svojstva i
+        dobiti objašnjenja svakog rezultata.
+      </p>
+    </section>
 
-    <button class="Calculate">Calculate</button>
+    <div id="message" role="alert"></div>
 
-    <div class="Explanation">
-      <h2 class="titleExp">Explanation:</h2>
-      <h3 class="res refleksivnaExp"></h3>
-      <h3 class="res antirefleksivnaExp"></h3>
-      <h3 class="res simetricnaExp"></h3>
-      <h3 class="res antisimetricnaExp"></h3>
-      <h3 class="res tranzitivnaExp"></h3>
-      <h3 class="res asimetricnaExp"></h3>
-      <h3 class="res zakljucakExp"></h3>
-    </div>
+    <main>
+      <section aria-label="Relation Matrix">
+        <table class="my-table" aria-label="Binary Relations Input Matrix">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">a</th>
+            <th scope="col">b</th>
+            <th scope="col">c</th>
+            <th scope="col">d</th>
+            <th scope="col">e</th>
+          </tr>
+          <tr>
+            <th scope="row">a</th>
+            <td>
+              <input
+                type="checkbox"
+                id="aa"
+                name="aa"
+                class="checkbox"
+                value="aa"
+                aria-label="Relation a to a"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="ab"
+                name="ab"
+                class="checkbox"
+                value="ab"
+                aria-label="Relation a to b"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="ac"
+                name="ac"
+                class="checkbox"
+                value="ac"
+                aria-label="Relation a to c"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="ad"
+                name="ad"
+                class="checkbox"
+                value="ad"
+                aria-label="Relation a to d"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="ae"
+                name="ae"
+                class="checkbox"
+                value="ae"
+                aria-label="Relation a to e"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">b</th>
+            <td>
+              <input
+                type="checkbox"
+                id="ba"
+                name="ba"
+                class="checkbox"
+                value="ba"
+                aria-label="Relation b to a"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="bb"
+                name="bb"
+                class="checkbox"
+                value="bb"
+                aria-label="Relation b to b"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="bc"
+                name="bc"
+                class="checkbox"
+                value="bc"
+                aria-label="Relation b to c"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="bd"
+                name="bd"
+                class="checkbox"
+                value="bd"
+                aria-label="Relation b to d"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="be"
+                name="be"
+                class="checkbox"
+                value="be"
+                aria-label="Relation b to e"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">c</th>
+            <td>
+              <input
+                type="checkbox"
+                id="ca"
+                name="ca"
+                class="checkbox"
+                value="ca"
+                aria-label="Relation c to a"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="cb"
+                name="cb"
+                class="checkbox"
+                value="cb"
+                aria-label="Relation c to b"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="cc"
+                name="cc"
+                class="checkbox"
+                value="cc"
+                aria-label="Relation c to c"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="cd"
+                name="cd"
+                class="checkbox"
+                value="cd"
+                aria-label="Relation c to d"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="ce"
+                name="ce"
+                class="checkbox"
+                value="ce"
+                aria-label="Relation c to e"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">d</th>
+            <td>
+              <input
+                type="checkbox"
+                id="da"
+                name="da"
+                class="checkbox"
+                value="da"
+                aria-label="Relation d to a"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="db"
+                name="db"
+                class="checkbox"
+                value="db"
+                aria-label="Relation d to b"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="dc"
+                name="dc"
+                class="checkbox"
+                value="dc"
+                aria-label="Relation d to c"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="dd"
+                name="dd"
+                class="checkbox"
+                value="dd"
+                aria-label="Relation d to d"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="de"
+                name="de"
+                class="checkbox"
+                value="de"
+                aria-label="Relation d to e"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">e</th>
+            <td>
+              <input
+                type="checkbox"
+                id="ea"
+                name="ea"
+                class="checkbox"
+                value="ea"
+                aria-label="Relation e to a"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="eb"
+                name="eb"
+                class="checkbox"
+                value="eb"
+                aria-label="Relation e to b"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="ec"
+                name="ec"
+                class="checkbox"
+                value="ec"
+                aria-label="Relation e to c"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="ed"
+                name="ed"
+                class="checkbox"
+                value="ed"
+                aria-label="Relation e to d"
+              />
+            </td>
+            <td>
+              <input
+                type="checkbox"
+                id="ee"
+                name="ee"
+                class="checkbox"
+                value="ee"
+                aria-label="Relation e to e"
+              />
+            </td>
+          </tr>
+        </table>
 
-    <footer>
-      <div>
-        <a href=""></a>Github:
-        <a href="https://github.com/NevenDavidovic/BinaryRelationEditor"
-          >BinaryRelationEditor</a
-        >
-      </div>
-    </footer>
+        <button class="Calculate" type="button">Calculate</button>
+      </section>
 
-    <script src="javascript.js"></script>
+      <section id="results" aria-live="polite">
+        <h2 class="naslov">Rezultati:</h2>
+        <h2>
+          Refleksivna:
+          <span
+            class="res refleksivna"
+            id="resRefleksivna"
+            style="text-align: right"
+          ></span>
+        </h2>
+        <br />
+        <hr />
+        <h2>Antirefleksivna: <span class="res antirefleksivna"></span></h2>
+        <br />
+        <hr />
+        <h2>Simetrična: <span class="res simetricna"></span></h2>
+        <br />
+        <hr />
+        <h2>Antisimetrična: <span class="res antisimetricna"></span></h2>
+        <br />
+        <hr />
+        <h2>Tranzitivna: <span class="res tranzitivna"></span></h2>
+        <br />
+        <hr />
+        <h2>Asimetrična: <span class="res asimetricna"></span></h2>
+        <br />
+        <hr />
+      </section>
+
+      <section class="Explanation" aria-live="polite">
+        <h2 class="titleExp">Objašnjenje:</h2>
+        <h3 class="res refleksivnaExp"></h3>
+        <h3 class="res antirefleksivnaExp"></h3>
+        <h3 class="res simetricnaExp"></h3>
+        <h3 class="res antisimetricnaExp"></h3>
+        <h3 class="res tranzitivnaExp"></h3>
+        <h3 class="res asimetricnaExp"></h3>
+        <h3 class="res zakljucakExp"></h3>
+      </section>
+      <section id="footer"></section>
+    </main>
+
+    <script type="module" src="js/index.js"></script>
+    <script src="js/utility/main.js"></script>
   </body>
 </html>

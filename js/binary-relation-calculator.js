@@ -1,3 +1,5 @@
+"use strict";
+
 function generateMatrix() {
   const setElements = document.getElementById("set-elements").value;
   const matrixContainer = document.getElementById("matrix-container");
