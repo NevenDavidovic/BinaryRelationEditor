@@ -65,7 +65,7 @@ export function displayResults(checkedValues, results) {
   // Handle empty case
   if (checkedValues.length < 1) {
     elements.messageExp.style.display = "none";
-    elements.messageDiv.innerHTML = "No pairs are being inserted.";
+    elements.messageDiv.innerHTML = "Nijedan par nije odabran.";
     elements.messageDiv.style.display = "block";
     Object.values(elements.results).forEach((el) => (el.innerHTML = ""));
     return;
@@ -73,7 +73,7 @@ export function displayResults(checkedValues, results) {
 
   // Regular case
   elements.messageDiv.style.display = "none";
-  elements.messageExp.style.display = "block";
+  elements.messageExp.style.display = "flex";
 
   // Process standard properties
   propertyConfig.forEach(({ key, explanation }) => {

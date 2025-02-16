@@ -1,40 +1,53 @@
 "use strict";
 
+import {
+  refleksivnost,
+  antirefleksivnost,
+  antisimetricnost,
+  simetricnost,
+  tranzitivnost,
+} from "./calc/relations.js";
+
 function generateMatrix() {
-  const setElements = document.getElementById("set-elements").value;
+  const setElements = document.getElementById("set-elements").value.trim();
   const matrixContainer = document.getElementById("matrix-container");
+  const messageBox = document.getElementById("message");
+  document.querySelector(".result").style.display = "none";
+
+  if (setElements.length === 0) {
+    messageBox.style.display = "block";
+    messageBox.textContent = "Greška: Nijedan element upisan.";
+    return;
+  }
 
   const uniqueElements = [...new Set(setElements)];
   if (setElements.length !== uniqueElements.length) {
-    alert("Error: Set contains duplicate elements.");
+    messageBox.style.display = "block";
+    messageBox.textContent = "Greška: Skup ima elemente duplikate.";
     return;
   }
 
   // Create matrix
-  const matrix = [];
-  for (let i = 0; i < setElements.length; i++) {
-    const row = [];
-    for (let j = 0; j < setElements.length; j++) {
-      row.push(false);
-    }
-    matrix.push(row);
-  }
+  const matrix = Array.from({ length: setElements.length }, () =>
+    new Array(setElements.length).fill(false)
+  );
 
   // Create table element
   const table = document.createElement("table");
+  table.classList.add("relation-table");
 
   // Create header row
   const headerRow = document.createElement("tr");
-  const headerCell = document.createElement("th");
-  headerRow.appendChild(headerCell);
+  headerRow.appendChild(document.createElement("th"));
 
-  for (let i = 0; i < setElements.length; i++) {
+  for (const el of setElements) {
     const headerCell = document.createElement("th");
-    headerCell.textContent = setElements[i];
+    headerCell.textContent = el;
     headerRow.appendChild(headerCell);
   }
-
   table.appendChild(headerRow);
+
+  let hasPairs = false; // Track if there are any checkboxes
 
   // Create matrix cells
   for (let i = 0; i < setElements.length; i++) {
@@ -56,10 +69,21 @@ function generateMatrix() {
       });
       cell.appendChild(checkbox);
       row.appendChild(cell);
+      hasPairs = true; // At least one checkbox was created
     }
 
     table.appendChild(row);
   }
+
+  // Display error message if no pairs exist
+  if (!hasPairs) {
+    messageBox.style.display = "block";
+    messageBox.textContent = "Nijedan par nije odabran";
+    return;
+  }
+
+  // Clear any previous messages
+  messageBox.style.display = "none";
 
   // Add table to container
   matrixContainer.innerHTML = "";
@@ -68,27 +92,7 @@ function generateMatrix() {
   // Create button element
   const button = document.createElement("button");
   button.textContent = "Calculate Binary Relation";
-  button.style.backgroundColor = "#007bff";
-  button.style.color = "white";
-
-  button.style.padding = "10px 20px";
-
-  button.style.transition = "all 0.3s ease";
-  button.style.backgroundColor = "#007bff"; // set background color to blue
-  button.style.color = "white"; // set text color to white
-  button.style.fontSize = "16px"; // set font size to 16 pixels
-
-  button.style.border = "none"; // remove border
-  button.style.borderRadius = "4px"; // add border radius of 4 pixels
-  button.style.margin = "20px 0"; // add margin of 20 pixels on top/bottom and 0 on left/right
-  button.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)"; // add box shadow
-
-  button.addEventListener("mouseover", () => {
-    button.style.backgroundColor = "#0056b3";
-  });
-  button.addEventListener("mouseout", () => {
-    button.style.backgroundColor = "#007bff";
-  });
+  button.classList.add("calculate-button");
 
   button.addEventListener("click", () => {
     const reflexiveResult = document.getElementById("reflexive-result");
@@ -97,164 +101,63 @@ function generateMatrix() {
     const antisymmetricResult = document.getElementById("antisymmetric-result");
     const transitiveResult = document.getElementById("transitive-result");
     const asymetricResult = document.getElementById("asymetric-result");
+    document.querySelector(".result").style.display = "block";
+
     const checkboxes = document.querySelectorAll(".matrix-checkbox");
-    const checkedValues = [];
+    const checkedValues = [...checkboxes]
+      .filter((cb) => cb.checked)
+      .map((cb) => cb.value);
 
-    for (let i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked) {
-        checkedValues.push(checkboxes[i].value);
-      }
-    }
-    const lengthSkupA = checkedValues.length;
-
-    if (checkedValues.length < 1) {
-      alert("Error: No pair was selected.");
+    // Show message if no pairs are selected
+    if (checkedValues.length === 0) {
+      messageBox.style.display = "block";
+      messageBox.textContent = "Greška: Nijedan par odabran.";
       return;
     }
 
-    reflexiveResult.textContent = refleksivnost(lengthSkupA, checkedValues)
-      ? "Yes"
-      : "No";
+    // Hide message since pairs exist
+    messageBox.style.display = "none";
+
+    // Update the results using imported functions
+    reflexiveResult.textContent = refleksivnost(
+      checkedValues.length,
+      checkedValues
+    )
+      ? "Da"
+      : "Ne";
     antireflexiveResult.textContent = antirefleksivnost(
-      lengthSkupA,
+      checkedValues.length,
       checkedValues
     )
-      ? "Yes"
-      : "No";
-    symmetricResult.textContent = simetricnost(lengthSkupA, checkedValues)
-      ? "Yes"
-      : "No";
+      ? "Da"
+      : "Ne";
+    symmetricResult.textContent = simetricnost(
+      checkedValues.length,
+      checkedValues
+    )
+      ? "Da"
+      : "Ne";
     antisymmetricResult.textContent = antisimetricnost(
-      lengthSkupA,
+      checkedValues.length,
       checkedValues
     )
-      ? "Yes"
-      : "No";
-    transitiveResult.textContent = tranzitivnost(lengthSkupA, checkedValues)
-      ? "Yes"
-      : "No";
-    asymetricResult.textContent = asimetricnost(lengthSkupA, checkedValues)
-      ? "Yes"
-      : "No";
+      ? "Da"
+      : "Ne";
+    transitiveResult.textContent = tranzitivnost(
+      checkedValues.length,
+      checkedValues
+    )
+      ? "Da"
+      : "Ne";
+    asymetricResult.textContent =
+      reflexiveResult.textContent === "No" &&
+      antisymmetricResult.textContent === "Yes"
+        ? "Da"
+        : "Ne";
   });
 
-  // Add button to container
   matrixContainer.appendChild(button);
 }
 
-// funkcija refleksivnost
-function refleksivnost(lengthSkupA, checkedValues) {
-  const lengthPairs = checkedValues.length;
-  let boolRefleksivnost = true;
-  let counter = 0;
-  for (let i = 0; i < lengthPairs; i++) {
-    let j = 0;
-    if (checkedValues[i][j] == checkedValues[i][j + 1]) {
-      counter++;
-    }
-  }
-
-  if (counter == lengthSkupA && boolRefleksivnost) return boolRefleksivnost;
-  else return false;
-}
-
-// funkcija antirefleksivnosti
-
-function antirefleksivnost(lengthSkupA, checkedValues) {
-  const lengthPairs = checkedValues.length;
-  if (lengthPairs == 1 && checkedValues[0] != checkedValues[1]) return true;
-  for (let i = 0; i < lengthPairs; i++) {
-    if (checkedValues[i][0] == checkedValues[i][1]) return false;
-    j = 0;
-    for (let it = 0; it < lengthPairs; it++) {
-      if (checkedValues[i][j] == checkedValues[it][j + 1]) {
-        return true;
-      }
-    }
-  }
-  return false;
-}
-
-// funkcija antisimetričnosti
-
-function antisimetricnost(lengthSkupA, checkedValues) {
-  const lengthPairs = checkedValues.length;
-  for (let i = 0; i < lengthPairs; i++) {
-    if (checkedValues[i][0] == checkedValues[i][1]) {
-      continue;
-    }
-    for (let j = 0; j < lengthPairs; j++) {
-      // increment j here
-      if (
-        checkedValues[i][0] == checkedValues[j][1] &&
-        checkedValues[i][1] == checkedValues[j][0]
-      ) {
-        return false;
-      }
-    }
-  }
-  return true;
-}
-
-// funkcija simetričnosti
-
-function simetricnost(lengthSkupA, checkedValues) {
-  const lenghtPairs = checkedValues.length;
-  let counter = 0;
-  for (let i = 0; i < lenghtPairs; i++) {
-    if (checkedValues[i][0] == checkedValues[i][1]) {
-      counter++;
-      continue;
-    } else {
-      for (let j = 0; j < lenghtPairs; j++) {
-        if (
-          checkedValues[i][0] == checkedValues[j][1] &&
-          checkedValues[i][1] == checkedValues[j][0]
-        ) {
-          counter++;
-        }
-      }
-    }
-  }
-  if (counter == lenghtPairs) return true;
-  else return false;
-}
-
-// funkcija tranzitivnosti
-
-function tranzitivnost(lengthSkupA, checkedValues) {
-  const lenghtPairs = checkedValues.length;
-  if (lenghtPairs == 1) return true;
-  for (let i = 0; i < lenghtPairs; i++) {
-    for (let j = 0; j < lenghtPairs; j++) {
-      if (checkedValues[i][1] == checkedValues[j][0]) {
-        for (let k = 0; k < lenghtPairs; k++) {
-          if (
-            checkedValues[i][0] == checkedValues[k][0] &&
-            checkedValues[j][1] == checkedValues[k][1]
-          ) {
-            return true;
-          }
-        }
-      }
-    }
-  }
-  return false;
-}
-
-// asimetričnost funkcija
-
-function asimetricnost(lengthSkupA, checkedValues) {
-  const boolAntirefleksivnost = antirefleksivnost(lengthSkupA, checkedValues);
-  const boolAntisimetricnost = antisimetricnost(lengthSkupA, checkedValues);
-  const boolSimetricnost = simetricnost(lengthSkupA, checkedValues);
-
-  // Testiranje ASIMETRIČNOSTI
-  if (boolSimetricnost) {
-    return false;
-  } else if (boolAntisimetricnost && boolAntirefleksivnost) {
-    return true;
-  } else {
-    return false;
-  }
-}
+window.generateMatrix = generateMatrix;
+document.getElementById("matrix-container").style.display = "block";

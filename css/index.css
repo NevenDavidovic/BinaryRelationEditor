@@ -1,19 +1,10 @@
-/* css/index.css */
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #2d3436;
-  background: #f8f9fa;
-  margin: 0;
-  padding: 0;
-}
-
 .header {
   background: linear-gradient(135deg, #2c3e50, #3498db);
   color: white;
   padding: 4rem 2rem;
   text-align: center;
   margin-bottom: 2rem;
+  border-bottom: 5px solid #e74c3c;
 }
 
 .header-container {
@@ -98,15 +89,6 @@ body {
 .Calculate:hover {
   transform: scale(1.05);
 }
-#message {
-  display: none;
-  max-width: 800px;
-  margin: 15px auto;
-  padding: 8px 15px;
-  background-color: #f1c40f;
-  border-radius: 4px;
-  color: #333;
-}
 
 #results {
   display: none;
@@ -134,7 +116,6 @@ body {
   background: #f8f9fa;
   border-radius: 10px;
   height: fit-content;
-  display: flex;
   flex-direction: column;
 }
 

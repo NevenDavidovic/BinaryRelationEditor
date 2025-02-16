@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalkulator binarnih relacija</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
 
   <body>
@@ -21,22 +22,21 @@
       </div>
     </header>
 
-    <section class="about-section">
-      <h2>Što je Binarni Kalkulator Relacija?</h2>
-      <p>
-        Binarni kalkulator relacija omogućuje analizu odnosa između elemenata u
-        skupu. Pomaže vam odrediti ključne osobine poput refleksivnosti,
-        simetričnosti, antisimetričnosti, antirefleksivnosti i tranzitivnosti.
-      </p>
-      <p>
-        Unosom relacija između elemenata možete automatski provjeriti svojstva i
-        dobiti objašnjenja svakog rezultata.
-      </p>
-    </section>
-
-    <div id="message" role="alert"></div>
-
     <main>
+      <section class="about-section">
+        <h2>Što je Binarni Kalkulator Relacija?</h2>
+        <p>
+          Binarni kalkulator relacija omogućuje analizu odnosa između elemenata
+          u skupu. Pomaže vam odrediti ključne osobine poput refleksivnosti,
+          simetričnosti, antisimetričnosti, antirefleksivnosti i tranzitivnosti.
+        </p>
+        <p>
+          Unosom relacija između elemenata možete automatski provjeriti svojstva
+          i dobiti objašnjenja svakog rezultata.
+        </p>
+      </section>
+
+      <div id="message" role="alert"></div>
       <section aria-label="Relation Matrix">
         <table class="my-table" aria-label="Binary Relations Input Matrix">
           <tr>
@@ -356,8 +356,8 @@
         <h3 class="res asimetricnaExp"></h3>
         <h3 class="res zakljucakExp"></h3>
       </section>
-      <section id="footer"></section>
     </main>
+    <section id="footer"></section>
 
     <script type="module" src="js/index.js"></script>
     <script src="js/utility/main.js"></script>

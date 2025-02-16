@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalkulator binarnih relacija</title>
     <link rel="stylesheet" href="css/make-relation.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <header>
-      <header class="header">
-        <div class="header-container">
-          <h1>Kalkulator binarnih relacija</h1>
-          <p class="header-subtitle">
-            Generirajte svoju matricu binarnih relacija brzo i jednostavno.
-          </p>
-          <a href="index.html" class="btn">Matrica binarnih relacija</a>
-        </div>
-      </header>
-      
-
+    <header class="header">
+      <div class="header-container">
+        <h1>Kalkulator binarnih relacija</h1>
+        <p class="header-subtitle">
+          Generirajte svoju matricu te odaberite parove brzo i jednostavno.
+        </p>
+        <a href="index.html" class="btn">Matrica binarnih relacija</a>
+      </div>
+    </header>
+    <div id="message" role="alert"></div>
     <div class="input-pairs-field">
       <label for="set-elements"
         >Unesite elemente skupa (bez razmaka i zareza):</label
@@ -73,7 +72,7 @@
 
     <div id="footer"></div>
 
-    <script src="js/binary-relation-calculator.js"></script>
+    <script type="module" src="js/binary-relation-calculator.js"></script>
     <script src="js/utility/main.js"></script>
   </body>
 </html>

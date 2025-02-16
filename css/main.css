@@ -1,0 +1,48 @@
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #2d3436;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+#message {
+  display: none;
+  max-width: 800px;
+  margin: 15px auto;
+  padding: 8px 15px;
+  background-color: #f1c40f;
+  border-radius: 4px;
+  color: #333;
+}
+
+footer {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 2rem;
+  border-top: 5px solid #e74c3c;
+}
+
+footer a {
+  color: #f1c40f;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ff6b6b;
+  text-decoration: underline;
+}

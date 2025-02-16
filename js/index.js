@@ -19,7 +19,7 @@ document.querySelector(".Calculate").addEventListener("click", function () {
 
   if (checkedValues.length < 1) {
     document.getElementById("message").style.display = "block";
-    document.getElementById("message").textContent = "No pairs selected.";
+    document.getElementById("message").textContent = "Nijedan par nije odabran";
     return;
   }
 
@@ -32,6 +32,5 @@ document.querySelector(".Calculate").addEventListener("click", function () {
   };
 
   displayResults(checkedValues, results);
-
   document.getElementById("results").style.display = "block";
 });
