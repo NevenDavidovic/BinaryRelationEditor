@@ -10,10 +10,11 @@
 
 - calculating binary relation with any number of elements in a set while generating a matrix(cartesian product)
 
+![image](https://github.com/user-attachments/assets/26535ec1-e637-4b52-b44c-0f3a059c3e79)
 
 
 ## TO DO
 -  module of generating binary relation tasks
--  finishing touches on binary relation calculator
+
 
 
